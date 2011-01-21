@@ -1,4 +1,5 @@
-* Chuck bindings to Wiimote
+#+TITLE: Chuck bindings to Wiimote
+#+META: 2009-04-01 00:00 code
 
 * Introduction
 
@@ -27,6 +28,10 @@ Run /DarwiinRemoteOSC/, sync your /Wiimote/ then load *wiimote.ck* at /ChucK/.
 
 Here is the function listing but the file *wiimote-test.ck* will
 help you better.
+
+| foo | bar | baz |
+|-----+-----+-----|
+| 1   | 3   | 2   |
 
 #+begin_src sh
  connected() => int   returns 1 if wiimote is connected
