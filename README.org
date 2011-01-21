@@ -1,5 +1,4 @@
-#+TITLE: Chuck bindings to Wiimote
-#+META: 2009-04-01 00:00 code
+* Chuck bindings to Wiimote
 
 * Introduction
 
