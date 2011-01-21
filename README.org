@@ -1,0 +1,61 @@
+#+TITLE: Chuck bindings to Wiimote
+#+META: 2009-04-01 00:00 code
+
+* Introduction
+
+Based on the work of [[http://www.dtic.upf.edu/~gcoleman/][G. Coleman]], it is a class to interface /Wiimote (+ Nunchuk)/ 
+with the [[http://chuck.cs.princeton.edu/][ChucK]] programming language using the OSC handler [[http://code.google.com/p/darwiinosc/][DarwiinRemoteOSC]] (yeah, I know, we need
+a free software alternative).
+
+* Prerequisites
+
+- [[http://chuck.cs.princeton.edu/][ChucK]]
+- [[http://code.google.com/p/darwiinosc/][DarwiinRemoteOSC]] (MacOSX)
+
+* Installation
+
+Download the source from the repository:
+
+#+begin_src sh
+$ git clone git://github.com/automata/chuck-wiimote.git
+#+end_src
+
+* Using
+
+Run /DarwiinRemoteOSC/, sync your /Wiimote/ then load *wiimote.ck* at /ChucK/. 
+
+* API
+
+Here is the function listing but the file *wiimote-test.ck* will
+help you better.
+
+#+begin_src sh
+ connected() => int   returns 1 if wiimote is connected
+ a()         => int   returns 1 if wiimote's A button is pressed
+ b()         => int   returns 1 if wiimote's B button is pressed
+ up()        => int   returns 1 if wiimote's UP button is pressed
+ down()      => int   returns 1 if wiimote's DOWN button is pressed
+ left()      => int   returns 1 if wiimote's LEFT button is pressed
+ right()     => int   returns 1 if wiimote's RIGHT button is pressed
+ minus()     => int   returns 1 if wiimote's MINUS button is pressed
+ plus()      => int   returns 1 if wiimote's PLUS button is pressed
+ home()      => int   returns 1 if wiimote's HOME button is pressed
+ one()       => int   returns 1 if wiimote's 1 button is pressed
+ two()       => int   returns 1 if wiimote's 2 button is pressed
+ accX()      => float returns a float number representing the wiimote's acceleration in the X-axis
+ accY()      => float returns a float number representing the wiimote's acceleration in the Y-axis
+ accZ()      => float returns a float number representing the wiimote's acceleration in the Z-axis
+ roll()      => float returns a float number representing the wiimote's roll movement
+ pitch()     => float returns a float number representing the wiimote's pitch movement
+ irdata()             *** is not implemented yet ***
+ battery()   => float returns a float number representing the wiimote's battery level 
+ nckJoyX()   => float returns a float number representing the nunchuk's joystick movement in the X-axis    
+ nckJoyY()   => float returns a float number representing the nunchuk's joystick movement in the Y-axis    
+ c()         => int   returns 1 if nunchuk's C button is pressed    
+ z()         => int   returns 1 if nunchuk's Z button is pressed    
+ nckAccX()   => float returns a float number representing the nunchuk's acceleration in the X-axis
+ nckAccY()   => float returns a float number representing the nunchuk's acceleration in the Y-axis
+ nckAccZ()   => float returns a float number representing the nunchuk's acceleration in the Z-axis
+ nckRoll()   => float returns a float number representing the nunchuk's roll movement
+ nckPitch()  => float returns a float number representing the nunchuk's pitch movement
+#+end_src
